@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sat Sep 23 22:06:52 2023
+# Process ID: 29408
+# Current directory: C:/Users/Abyss/Desktop/vivado/lab1-2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent29228 C:\Users\Abyss\Desktop\vivado\lab1-2\lab1-2.xpr
+# Log file: C:/Users/Abyss/Desktop/vivado/lab1-2/vivado.log
+# Journal file: C:/Users/Abyss/Desktop/vivado/lab1-2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Abyss/Desktop/vivado/lab1-2/lab1-2.xpr
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/Abyss/Desktop/vivado/lab1-2/lab1-2.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/2020.2/data/ip'.
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Abyss\Desktop\lab1\lab1\dec7seg_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Abyss\Desktop\lab1\lab1\dec7seg.v:]
+ERROR: [Common 17-180] Spawn failed: No error
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Sep 23 22:35:34 2023...

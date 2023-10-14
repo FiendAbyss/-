@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Oct  1 18:58:49 2023
+# Process ID: 10484
+# Current directory: C:/Users/Abyss/Desktop/lab2/lab2_2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6032 C:\Users\Abyss\Desktop\lab2\lab2_2\lab2_2.xpr
+# Log file: C:/Users/Abyss/Desktop/lab2/lab2_2/vivado.log
+# Journal file: C:/Users/Abyss/Desktop/lab2/lab2_2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Abyss/Desktop/lab2/lab2_2/lab2_2.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1

@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Abyss/Desktop/lab1/lab1/dec7seg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dec7seg
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Abyss/Desktop/lab1/lab1/dec7seg_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dec7seg_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Abyss/Desktop/vivado/lab1-2/lab1-2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

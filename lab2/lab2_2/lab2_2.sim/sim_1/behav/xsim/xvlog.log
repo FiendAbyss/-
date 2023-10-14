@@ -1,0 +1,5 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Abyss/Desktop/lab2/encryption6b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module encryption6b
+INFO: [VRFC 10-311] analyzing module lfsr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Abyss/Desktop/lab2/encryption6b_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module encryption6b_tb

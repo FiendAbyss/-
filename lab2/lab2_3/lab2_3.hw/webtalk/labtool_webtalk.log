@@ -1,0 +1,9 @@
+
+****** Webtalk v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Abyss/Desktop/lab2/lab2_3/lab2_3.hw/webtalk/labtool_webtalk.tcl -notrace
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 116.594 ; gain = 17.578
+INFO: [Common 17-206] Exiting Webtalk at Tue Sep 26 00:13:03 2023...

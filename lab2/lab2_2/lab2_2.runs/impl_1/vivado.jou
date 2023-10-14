@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Oct  1 19:00:17 2023
+# Process ID: 22612
+# Current directory: C:/Users/Abyss/Desktop/lab2/lab2_2/lab2_2.runs/impl_1
+# Command line: vivado.exe -log encryption6b.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source encryption6b.tcl -notrace
+# Log file: C:/Users/Abyss/Desktop/lab2/lab2_2/lab2_2.runs/impl_1/encryption6b.vdi
+# Journal file: C:/Users/Abyss/Desktop/lab2/lab2_2/lab2_2.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source encryption6b.tcl -notrace

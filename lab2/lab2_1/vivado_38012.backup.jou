@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Oct  1 15:22:00 2023
+# Process ID: 38012
+# Current directory: C:/Users/Abyss/Desktop/lab2/lab2_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent28520 C:\Users\Abyss\Desktop\lab2\lab2_1\lab2_1.xpr
+# Log file: C:/Users/Abyss/Desktop/lab2/lab2_1/vivado.log
+# Journal file: C:/Users/Abyss/Desktop/lab2/lab2_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Abyss/Desktop/lab2/lab2_1/lab2_1.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source regfile32_tb.tcl
+reset_run synth_1
+launch_runs synth_1 -jobs 20
+wait_on_run synth_1
+close_sim
+open_run synth_1 -name synth_1
+report_methodology -name ultrafast_methodology_1
+launch_runs impl_1 -jobs 20
+wait_on_run impl_1
+close_design
+open_run impl_1
+open_run synth_1 -name synth_1
+report_utilization -name utilization_1
+current_design impl_1
+report_utilization -name utilization_1
