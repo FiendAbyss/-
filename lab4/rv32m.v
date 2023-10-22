@@ -18,28 +18,30 @@ module rv32m(
     wire [31:0] div_b_r;
     wire [63:0] mul_u;
     wire [63:0] mul_b;
-
+    wire signed [63:0] 64_rs1s;
+    wire signed [63:0] 64_rs2s;
     wire signed [31:0] rs1s;
     wire signed [31:0] rs2s;
-    assign rs1s = rs1;
-    assign rs2s = rs2;
     wire valid_mul_u;
     wire valid_mul_b;
     wire valid_div_u;
     wire valid_div_b;
-
     wire error_divd;
     wire error_divu;
 
-    wire [63:0] ers1;
-    wire [63:0] ers2;
-    assign ers1 = {32'b0, rs1};
-    assign ers2 = {32'b0, rs2};
+
+
+    assign rs1s = rs1;
+    assign rs2s = rs2;
+
+    wire [63:0] 64_rs1;
+    wire [63:0] 64_rs2;
+    assign 64_rs1 = {32'b0, rs1};
+    assign 64_rs2 = {32'b0, rs2};
     
-    wire signed [63:0] ers1s;
-    wire signed [63:0] ers2s;
-    assign ers1s = {{32{rs1[31]}}, rs1};
-    assign ers2s = {{32{rs2[31]}}, rs2};
+
+    assign 64_rs1s = {{32{rs1[31]}}, rs1};
+    assign 64_rs2s = {{32{rs2[31]}}, rs2};
 
     reg [31:0] res;
     assign rd = res;
@@ -64,7 +66,7 @@ module rv32m(
         case(funct3)
         3'b000: begin res <= mul_u[31:0]; valid <= valid_mul_u; error <= 0; end
         3'b001: begin res <= mul_b[63:32]; valid <= valid_mul_b; error <= 0; end
-        3'b010: begin res <= (ers1s * ers2) >> 32; valid <= valid_mul_u; error <= 0; end
+        3'b010: begin res <= (64_rs1s * 64_rs2) >> 32; valid <= valid_mul_u; error <= 0; end
         3'b011: begin res <= mul_u[63:32]; valid <= valid_mul_u; error <= 0; end
         3'b100: begin res <= div_b_q; valid <= valid_div_b; error <= error_divd; end
         3'b101: begin res <= div_u_q; valid <= valid_div_u; error <= error_divu; end
