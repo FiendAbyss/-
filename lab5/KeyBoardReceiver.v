@@ -21,12 +21,18 @@
 
 module KeyBoardReceiver(
     output [31:0] keycodeout,           //接收到连续4个键盘扫描码
+    output [15:0] keycodeout_prev,           //接收到上一个键盘扫描码
+    output [15:0] keycodeout_cur,           //接收到当前键盘扫描码
     output ready,                     //数据就绪标志位
+    output [15:0] cnt_p,                //按键计数
     input clk,                        //系统时钟 
     input kb_clk,                    //键盘 时钟信号
     input kb_data                    //键盘 串行数据
-    );
+);
     wire kclkf, kdataf;
+    reg [15:0] keycodeoutprev;
+    reg [15:0] keycodeoutcur;
+    reg [15:0]cnt_pushbutton;
     reg [7:0]datacur;              //当前扫描码
     reg [7:0]dataprev;            //上一个扫描码
     reg [3:0]cnt;                //收到串行位数
@@ -37,6 +43,9 @@ module KeyBoardReceiver(
     initial begin                 //初始化
         keycode[7:0]<=8'b00000000;
         cnt<=4'b0000;
+        cnt_pushbutton<=16'b0000000000000000;
+        keycodeoutcur<=16'b0000000000000000;
+        keycodeoutprev<=16'b0000000000000000;
     end
     debouncer debounce( .clk(clk), .I0(kb_clk), .I1(kb_data), .O0(kclkf), .O1(kdataf));  //消除按键抖动
     always@(negedge(kclkf))begin
@@ -66,6 +75,27 @@ module KeyBoardReceiver(
             readyflag<=1'b1;              //数据就绪标志位置1
         end
     end
+
+    always @(posedge readyflag)begin
+        if (keycode[15:8]!=8'hF0 && keycode[7:0]!=8'hF0 && (keycode[15:8]!=8'hE0 || keycode[23:16]!=8'hF0))begin
+            cnt_pushbutton<=cnt_pushbutton+1;
+        end
+    end
+
+    always @(cnt_pushbutton) begin
+        keycodeoutprev<=keycodeoutcur;
+        keycodeoutcur[7:0]<=keycode[7:0];
+        if (keycode[15:8]==8'hE0)begin
+            keycodeoutcur[15:8]<=8'hE0;
+        end
+        else begin
+            keycodeoutcur[15:8]<=8'b00000000;
+        end
+    end
+
+    assign keycodeout_prev=keycodeoutprev;
+    assign keycodeout_cur=keycodeoutcur;
+    assign cnt_p=cnt_pushbutton;
     assign keycodeout=keycode;
     assign ready=readyflag;    
 endmodule
